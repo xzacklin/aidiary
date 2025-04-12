@@ -1,76 +1,87 @@
-aidiary
-aidiary is a mental wellness journaling app built with Flask. It lets users log daily reflections, automatically analyzes their mood using a PHQ-9-inspired scoring system, and generates custom insights based on natural language processing.
+# aidiary
 
-It’s designed to help people reflect on their emotional patterns over time — kind of like a smart diary that knows what you’re going through and nudges you with helpful prompts.
+aidiary is a journaling app I built with Flask to help users reflect on their mental health. It combines basic sentiment analysis with PHQ-9 inspired scoring to give users insights based on what they write in their diary entries.
 
-What It Does
-Secure Login/Register System – Users can create accounts, log in, and log out.
+The goal is to create a simple and private space where people can track how they're doing emotionally, get suggestions based on patterns in their writing, and monitor their wellness over time.
 
-PHQ-9 Based Mood Scoring – Each diary entry is analyzed for emotional keywords and tone.
+---
 
-Sentiment Analysis – Uses TextBlob to detect how positive or negative the entry is.
+## 🧠 Features
 
-Wellness Score – Blends sentiment and symptom weight to track a user’s mental health over time.
+- Secure user registration and login
+- PHQ-9-based keyword scanning to detect possible mental health symptoms
+- Sentiment analysis using TextBlob
+- Custom suggestions and feedback for each entry
+- Initial quiz to establish a wellness baseline
+- Track progress over time via API (ready for graphing or front-end charting)
 
-Custom Tips – Based on detected symptoms (like sleep or energy issues), the app suggests thoughtful next steps.
+---
 
-Quiz-First Flow – Users take a short quiz on first login to establish their initial wellness baseline.
+## 🛠 Tech Stack
 
-Progress Visualization – Entries are timestamped and tracked for future graphing (API-ready).
+- **Backend**: Python, Flask
+- **Frontend**: HTML (Jinja templates), CSS
+- **Database**: SQLite
+- **NLP**: TextBlob, regex-based keyword detection
+- **Security**: Password hashing with Werkzeug
 
-Tech Stack
-Backend: Python (Flask), SQLite
+---
 
-Frontend: Jinja2 templates (HTML), basic CSS
+## 🚀 How to Run It
 
-NLP Tools: TextBlob, Regex, Custom PHQ-9 Keyword Matching
+1. Clone the repo:
 
-User Management: Werkzeug Security for password hashing
+   ```bash
+   git clone https://github.com/xzacklin/aidiary.git
+   cd aidiary
+   ```
 
-Other: JavaScript (minimal), Chart.js-compatible API for progress
+2. (Optional) Create a virtual environment:
 
-Getting Started
-Clone this repo
-git clone https://github.com/xzacklin/aidiary.git && cd aidiary
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-(Optional) Create a virtual environment
-python3 -m venv venv && source venv/bin/activate
-(Windows: venv\Scripts\activate)
+3. Install the dependencies:
 
-Install dependencies
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Run it
-python app.py
-Visit http://localhost:5000 in your browser.
+4. Start the app:
+   ```bash
+   python app.py
+   ```
 
-File Breakdown
-app.py – Entry point that ties everything together
+Then just go to `http://localhost:5000` in your browser.
 
-auth.py – Register, login, logout logic
+---
 
-quiz.py – First-time wellness quiz
+## 📁 File Overview
 
-diary.py – Core journal logic + sentiment + suggestions
+- `app.py`: main app file with route setup
+- `auth.py`: handles user auth (register, login, logout)
+- `quiz.py`: quiz logic for initial wellness score
+- `diary.py`: diary entry creation, sentiment tagging, suggestions
+- `helper.py`: keyword matching and sentiment functions
+- `db.py`: sets up and connects to the SQLite database
+- `templates/`: all the HTML files
+- `static/`: CSS and any JS (minimal for now)
+- `diary.db`: your local SQLite database
 
-helper.py – NLP/AI logic: scoring, tagging, tips
+---
 
-db.py – SQLite init and connection helpers
+## 💡 Future Improvements
 
-templates/ – All HTML views
+- Add chart visualizations of mood trends
+- Notification or reminder system
+- Mobile layout improvements
+- Option to export entries as PDF or CSV
+- Use a more advanced NLP model for deeper insights
 
-static/ – CSS and potential JS
+---
 
-diary.db – Prepped SQLite DB (auto-generated if missing)
+## 📄 License
 
-Future Ideas
-Add charts to visualize wellness trends over time
-
-Token-based reminders or streaks
-
-AI summarizer for monthly mood trends
-
-Fully offline mode with localStorage sync
-
-License
-MIT – Feel free to build on this.
+MIT – use it, tweak it, or build off it.
