@@ -145,7 +145,7 @@ def compute_wellness_score(text):
 
     sentiment = TextBlob(text).sentiment.polarity
     sentiment_score = int(50 + (sentiment * 50))
-.
+
     combined_score = int(0.25 * keyword_score + 0.75 * sentiment_score)
 
     # Log details (optional)
