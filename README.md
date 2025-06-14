@@ -6,7 +6,7 @@ The goal is to create a simple and private space where people can track how they
 
 ---
 
-## 🧠 Features
+## Features
 
 - Secure user registration and login
 - PHQ-9-based keyword scanning to detect possible mental health symptoms
@@ -17,17 +17,17 @@ The goal is to create a simple and private space where people can track how they
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend**: Python, Flask
-- **Frontend**: HTML (Jinja templates), CSS
+- **Frontend**: HTML, CSS
 - **Database**: SQLite
 - **NLP**: TextBlob, regex-based keyword detection
 - **Security**: Password hashing with Werkzeug
 
 ---
 
-## 🚀 How to Run It
+## How to Run It
 
 1. Clone the repo:
 
@@ -58,7 +58,7 @@ Then just go to `http://localhost:5000` in your browser.
 
 ---
 
-## 📁 File Overview
+##  File Overview
 
 - `app.py`: main app file with route setup
 - `auth.py`: handles user auth (register, login, logout)
